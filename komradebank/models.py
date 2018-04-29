@@ -295,7 +295,7 @@ class Xact:
         # Implement method to return list of all transactions for a given account id.
         # SQL query should be ordered so the most recent transaction (by id) is first i.e. index 0.
         rows = db.select("SELECT * from xacts WHERE xact_acct = ? \
-        ORDER BY xact_timestamp DESC", [user_id])
+        ORDER BY xact_timestamp DESC", [acct_id])
         xacts = []
         for row in rows:
             xacts.append(Xact._from_row(row))
